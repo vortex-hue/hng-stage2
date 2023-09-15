@@ -24,9 +24,8 @@ router = APIRouter(
     tags=["Persons"]
 )
 
-database.Base.metadata.create_all(database.engine)
+models.Person.metadata.create_all(database.engine)
 
-app.include_router(router)
 
 
 def get_db():
@@ -61,7 +60,7 @@ async def delete_person(id, db: Session = Depends(get_db)):
 async def update_person(id, request: schema.Person, db: Session = Depends(get_db)):
     return person.update(id, request, db)
 
-
+app.include_router(router)
 ## debug mode
 # if __name__ == '__main__':
 #     uvicorn.run(app, host='127.0.0.1', port=5000)
