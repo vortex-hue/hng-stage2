@@ -13,7 +13,7 @@ Persons*
 
 ``` 
     Method GET
-    route /person/
+    route /api
     Function All
     param[
         `
@@ -24,7 +24,7 @@ Persons*
 
 ```
 Method POST
-route /person/
+route /api
 Function Create Person
 param[
         `
@@ -39,7 +39,7 @@ param[
 
 ```
     Method GET
-    route /person/{id}
+    route /api/{id}
     Function Show person
     param[
         `
@@ -52,7 +52,7 @@ param[
 
 ```
     Method PUT
-    route /person/{id}
+    route /api/{id}
     Function Update a person reocrd
     param[
         `
@@ -68,7 +68,7 @@ param[
 
 ```
     Method DELETE
-    route /person/{id}
+    route /api/{id}
     Function Delete a person
     param[
         `
