@@ -3,7 +3,7 @@ from sqlalchemy.orm import Session
 from typing import List
 import uvicorn
 from fastapi.middleware.cors import CORSMiddleware
-from . import schema, models, database, person
+import schema, models, database, person
 
 app = FastAPI()
 
@@ -24,7 +24,7 @@ router = APIRouter(
     tags=["Persons"]
 )
 
-models.Base.metadata.create_all(database.engine)
+database.Base.metadata.create_all(database.engine)
 
 app.include_router(router)
 

@@ -1,8 +1,8 @@
 from fastapi import Depends, Response, HTTPException, status
 from typing import List
 
-from . import database, models
-from . import schema
+import database, models
+import schema
 from sqlalchemy.orm import Session
 
 
