@@ -36,12 +36,12 @@ def get_db():
         db.close()
 
 
-@router.get("/", response_model=List[schema.Person])
+@router.get("", response_model=List[schema.Person])
 async def get_all_persons(db: Session = Depends(get_db)):
     return person.all(db)
 
 
-@router.post("/", status_code=status.HTTP_201_CREATED)
+@router.post("", status_code=status.HTTP_201_CREATED)
 async def create_person(request: schema.Person, db: Session = Depends(get_db)):
     return person.create(request, db)
 
